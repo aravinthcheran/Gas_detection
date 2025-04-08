@@ -141,7 +141,8 @@ function updateHomeUI(homeNum, data, timestamp) {
 function updateMap(homeId, lat, lon, gasValue) {
     // Check if coordinates are valid
     if (!isValidCoordinate(lat, lon)) {
-        return;
+        lat = 11.021986996654217;
+        lon = 77.00609149144587;
     }
     
     // Initialize map if not already initialized

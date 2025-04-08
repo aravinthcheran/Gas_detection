@@ -81,8 +81,8 @@ function initializePage(homeNumber) {
     function updateMap(lat, lon, gasValue) {
         // Check if coordinates are valid
         if (!isValidCoordinate(lat, lon)) {
-            showMapError('Invalid coordinates received. Map cannot be displayed.');
-            return;
+            lat = 11.021986996654217; // Default latitude
+            lon = 77.00609149144587;  // Default longitude
         }
         
         // Initialize map if not already initialized
