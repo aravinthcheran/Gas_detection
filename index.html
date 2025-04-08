@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Monitoring System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="main-nav">
+                <div class="logo">
+                    <i class="fas fa-wind"></i>
+                    <span>Gas Monitor</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link active">Dashboard</a></li>
+                    <li><a href="home1.html" class="nav-link">Home 1 Details</a></li>
+                    <li><a href="home2.html" class="nav-link">Home 2 Details</a></li>
+                </ul>
+            </nav>
+            <div class="dashboard-header">
+                <h1>Emergency Monitoring Dashboard</h1>
+                <p>Real-time gas level monitoring for all locations</p>
+            </div>
+        </header>
+        
+        <div class="emergency-dashboard">
+            <!-- Home 1 Monitor -->
+            <div class="monitor-panel">
+                <div class="panel-header">
+                    <h2>Home 1</h2>
+                    <span class="address"><i class="fas fa-map-marker-alt"></i> 123 Main Street, City</span>
+                </div>
+                <div class="status-indicator" id="home1-status">
+                    <div class="indicator-dot"></div>
+                    <span>Status: Checking...</span>
+                </div>
+                <div class="panel-body">
+                    <div class="gas-info">
+                        <h3>Gas Level</h3>
+                        <div class="meter-container">
+                            <div class="meter" id="home1-meter"></div>
+                        </div>
+                        <div class="reading" id="home1-reading">Loading...</div>
+                    </div>
+                    <div class="location-preview">
+                        <h3>Location</h3>
+                        <div class="coord-info">
+                            <div><span>Lat: </span><span id="home1-lat">Loading...</span></div>
+                            <div><span>Lon: </span><span id="home1-lon">Loading...</span></div>
+                        </div>
+                        <div class="mini-map" id="home1-map"></div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="last-updated">Last update: <span id="home1-timestamp">--</span></span>
+                    <a href="home1.html" class="details-btn">View Details</a>
+                </div>
+            </div>
+            
+            <!-- Home 2 Monitor -->
+            <div class="monitor-panel">
+                <div class="panel-header">
+                    <h2>Home 2</h2>
+                    <span class="address"><i class="fas fa-map-marker-alt"></i> 456 Oak Avenue, Town</span>
+                </div>
+                <div class="status-indicator" id="home2-status">
+                    <div class="indicator-dot"></div>
+                    <span>Status: Checking...</span>
+                </div>
+                <div class="panel-body">
+                    <div class="gas-info">
+                        <h3>Gas Level</h3>
+                        <div class="meter-container">
+                            <div class="meter" id="home2-meter"></div>
+                        </div>
+                        <div class="reading" id="home2-reading">Loading...</div>
+                    </div>
+                    <div class="location-preview">
+                        <h3>Location</h3>
+                        <div class="coord-info">
+                            <div><span>Lat: </span><span id="home2-lat">Loading...</span></div>
+                            <div><span>Lon: </span><span id="home2-lon">Loading...</span></div>
+                        </div>
+                        <div class="mini-map" id="home2-map"></div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <span class="last-updated">Last update: <span id="home2-timestamp">--</span></span>
+                    <a href="home2.html" class="details-btn">View Details</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard-controls">
+            <button id="refresh-all-btn" class="refresh-btn"><i class="fas fa-sync-alt"></i> Refresh All Data</button>
+            <button id="emergency-btn" class="emergency-btn"><i class="fas fa-exclamation-triangle"></i> Emergency Contact</button>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 Gas Monitoring System</p>
+        </footer>
+    </div>
+
+    <!-- Load scripts in the correct order -->
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+            crossorigin=""></script>
+    
+    <!-- Load only dashboard.js for the index page -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
